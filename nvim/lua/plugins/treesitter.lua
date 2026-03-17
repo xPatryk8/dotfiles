@@ -1,12 +1,12 @@
 return {
-  { -- Highlight, edit, and navigate code
+  { 
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
     build = ':TSUpdate',
     branch = 'main',
-    -- [[ Configure Treesitter ]] See `:help nvim-treesitter-intro`
+   
     config = function()
-      local parsers = { 'bash', 'c', 'diff', 'lua', 'zig', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+      local parsers = { 'bash', 'c', 'diff', 'lua', 'zig',  'markdown', 'vim', 'vimdoc' }
       require('nvim-treesitter').install(parsers)
       vim.api.nvim_create_autocmd('FileType', {
         callback = function(args)
@@ -21,6 +21,7 @@ return {
           if not vim.treesitter.language.add(language) then
             return
           end
+
           -- enables syntax highlighting and other treesitter features
           vim.treesitter.start(buf, language)
 
@@ -31,4 +32,3 @@ return {
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et
