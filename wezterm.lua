@@ -12,8 +12,11 @@ config.initial_cols = 120
 config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
+config.font = wezterm.font 'BitstromWeraNerdFontMono'
 config.font_size = 16
 config.color_scheme = "Tokyo Night"
+
+config.window_background_opacity = 0.85
 
 config.enable_tab_bar = false
 
