@@ -25,5 +25,6 @@ require("lazy").setup({
       require 'plugins.which-key',
       require 'plugins.gitsigns',
       require 'plugins.lspconfig',
+      require 'plugins.blink',
 	}
 })
