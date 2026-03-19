@@ -4,6 +4,7 @@ vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
+vim.opt.winborder = "rounded"
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 3
