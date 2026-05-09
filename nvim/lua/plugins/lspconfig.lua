@@ -28,7 +28,6 @@ return {
 					end
 
 					map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
-					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 					map("grr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 					map("gri", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 					map("grd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
@@ -36,6 +35,9 @@ return {
 					map("gO", require("telescope.builtin").lsp_document_symbols, "Open Document Symbols")
 					map("gW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Open Workspace Symbols")
 					map("grt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype Definition")
+					map("<leader>la", vim.lsp.buf.code_action, "[L]sp Code [A]ction")
+					map("<leader>ls", vim.diagnostic.open_float, "[L]sp [S]ee error")
+					map("<leader>le", vim.diagnostic.setloclist, "[L]sp [E]rrors")
 
 					-- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
 					---@param client vim.lsp.Client
