@@ -26,6 +26,8 @@ vim.o.timeoutlen = 300
 vim.o.undofile = true
 
 vim.o.confirm = true
-vim.opt.clipboard = ''
+vim.opt.clipboard = ""
 
-vim.cmd [[highlight Normal guibg=NONE ctermbg=NONE]]
+vim.g.snippet = "none"
+
+vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
