@@ -31,3 +31,6 @@ vim.opt.clipboard = ""
 vim.g.snippet = "none"
 
 vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
+
+vim.opt.laststatus = 3 -- global statusline
+vim.opt.cmdheight = 0
