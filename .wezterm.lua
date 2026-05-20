@@ -27,5 +27,13 @@ config.window_padding = {
 	bottom = 0,
 }
 
+config.keys = {
+	{
+		key = "t",
+		mods = "SUPER",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+}
+
 -- Finally, return the configuration to wezterm:
 return config
