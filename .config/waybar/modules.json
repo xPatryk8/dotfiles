@@ -33,7 +33,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "scroll-step": 5
     },
     "network": {
         "format-wifi": " {signalStrength}%",

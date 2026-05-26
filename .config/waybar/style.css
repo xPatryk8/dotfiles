@@ -15,6 +15,10 @@ window#waybar {
     transition: background-color .5s;
 }
 
+#pulseaudio.source-muted {
+    color: #f53c3c;
+}
+
 .modules-left,
 .modules-center,
 .modules-right
