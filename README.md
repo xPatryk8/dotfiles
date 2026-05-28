@@ -3,7 +3,7 @@ All config that I need.
 ## Packages needed for config
 nvim wezterm tmux stow syncthing kdeconnect
 
-for hyprland: waybar rofi swaync 
+for hyprland: waybar rofi swaync flameshot
 
 font in terminal: BitstromWeraNerdFontMono
 
