@@ -4,7 +4,7 @@
 
 local terminal = "wezterm"
 local fileManager = "dolphin"
-local menu = "rofi -show drun -theme '.config/rofi/launchers/type-6/style-7.rasi'"
+local menu = "rofi -modi drun,calc -show"
 
 local mainMod = "SUPER"
 
