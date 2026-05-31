@@ -1,50 +1,43 @@
----------------------
----- KEYBINDINGS ----
----------------------
+-- Apps
+hl.bind(MAIN_MOD .. " + Q", hl.dsp.exec_cmd(TERMINAL))
+hl.bind(MAIN_MOD .. " + E", hl.dsp.exec_cmd(FILE_MANAGER))
+hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
+hl.bind(MAIN_MOD .. " + X", function()
+	hl.exec_cmd(TERMINAL .. " -e btop", { workspace = "special:magic" })
+end)
+hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"), { locked = true })
 
-local terminal = "wezterm"
-local fileManager = "dolphin"
-local menu = "rofi -modi drun,calc -show"
-
-local mainMod = "SUPER"
-
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + C", hl.dsp.window.close())
-
+-- General
+hl.bind(MAIN_MOD .. " + C", hl.dsp.window.close())
 hl.bind(
-	mainMod .. " + escape",
+	MAIN_MOD .. " + escape",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
+hl.bind(MAIN_MOD .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(MAIN_MOD .. " + T", hl.dsp.layout("togglesplit")) -- dwindle only
 
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit")) -- dwindle only
-
--- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+-- Move focus
+hl.bind(MAIN_MOD .. " + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(MAIN_MOD .. " + L", hl.dsp.focus({ direction = "right" }))
+hl.bind(MAIN_MOD .. " + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(MAIN_MOD .. " + J", hl.dsp.focus({ direction = "down" }))
+hl.bind(MAIN_MOD .. " + F", hl.dsp.window.fullscreen())
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind(MAIN_MOD .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(MAIN_MOD .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(MAIN_MOD .. " + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(MAIN_MOD .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(MAIN_MOD .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(MAIN_MOD .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(
@@ -72,5 +65,3 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 hl.bind("Pause", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
-
-hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"), { locked = true })

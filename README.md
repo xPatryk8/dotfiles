@@ -1,11 +1,11 @@
 All config that I need.
 
-## Packages needed for config
-nvim wezterm tmux stow syncthing kdeconnect
+## Packages
 
-for hyprland: waybar rofi swaync flameshot
+### Core
+hyprland waybar wezterm rofi stow swaync flameshot nvim lazygit tmux yazi
 
-font in terminal: BitstromWeraNerdFontMono
+### Usefull
+kdeconnect syncthing
 
-## Other packages that I use
-git lazygit
+Font in terminal: BitstromWeraNerdFontMono
