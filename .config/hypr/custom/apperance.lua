@@ -51,5 +51,8 @@ hl.config({
 	},
 })
 
+hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
+
 hl.animation({ leaf = "windows", enabled = true, speed = 1.00, spring = "easy", style = "popin" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 1.00, bezier = "almostLinear", style = "slide" })
