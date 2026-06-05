@@ -19,7 +19,8 @@
         "memory",
         "temperature",
         "battery",
-        "tray"
+        "tray",
+        "custom/notification"
     ],
 
     "include": [

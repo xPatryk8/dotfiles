@@ -15,6 +15,7 @@ hl.bind(
 )
 hl.bind(MAIN_MOD .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(MAIN_MOD .. " + T", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(MAIN_MOD .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
 -- Move focus
 hl.bind(MAIN_MOD .. " + H", hl.dsp.focus({ direction = "left" }))

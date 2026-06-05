@@ -40,7 +40,8 @@ window#waybar {
 #temperature,
 #network,
 #pulseaudio,
-#tray
+#tray,
+#custom-notification
 {
     padding: 0 6px;
     border-radius: 15px;
