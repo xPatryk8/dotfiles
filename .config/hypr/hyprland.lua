@@ -1,7 +1,10 @@
+NEW_WORKSPACE = "~/.config/hypr/script/launch-on-new-workspace.sh "
+
 MAIN_MOD = "SUPER"
 TERMINAL = "wezterm"
 FILE_MANAGER = TERMINAL .. " -e yazi"
 MENU = "rofi -modi drun,calc -show"
+BROWSER_PRIV = "flatpak run app.zen_browser.zen --private-window"
 
 require("custom.keybinds")
 require("custom.apperance")
