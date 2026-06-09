@@ -18,7 +18,7 @@ return {
 
 				map("n", "<leader>gs", gs.stage_buffer, "git [s]tage buffer")
 				map("n", "<leader>gr", gs.reset_buffer, "git [r]eset buffer")
-				map("n", "<leader>gu", gs.undo_stage_hunk(), "git [u]ndo stage")
+				map("n", "<leader>gu", gs.undo_stage_hunk, "git [u]ndo stage")
 				map("n", "<leader>gp", gs.preview_hunk, "git [p]review hunk")
 			end,
 		},
