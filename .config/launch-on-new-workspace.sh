@@ -1,1 +1,0 @@
-hypr/launch-on-new-workspace.sh
