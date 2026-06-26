@@ -6,6 +6,7 @@ hl.on("hyprland.start", function()
 		'mpvpaper -n 45 -o "input-ipc-server=/tmp/mpvpaper.sock loop-playlist shuffle no-audio"  eDP-1 ~/Pictures/wallpapers/playlist.m3u'
 	)
 	hl.exec_cmd("~/.config/hypr/script/mpvpaper-autopause.sh")
+	hl.exec_cmd("~/.config/hypr/script/launch-steam-when-gamepad-connected.sh")
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("flatpak run app.zen_browser.zen", { workspace = "1" })
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
