@@ -36,5 +36,6 @@ require("lazy").setup({
 		require("plugins.gitsigns"),
 		require("plugins.lspconfig"),
 		require("plugins.blink"),
+		require("plugins.compile-mode"),
 	},
 })
