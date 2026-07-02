@@ -37,5 +37,6 @@ require("lazy").setup({
 		require("plugins.lspconfig"),
 		require("plugins.blink"),
 		require("plugins.compile-mode"),
+		require("plugins.markview"),
 	},
 })
