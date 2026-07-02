@@ -33,7 +33,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
 vim.keymap.set({ "n", "v" }, "<leader>x", '"_d', { desc = "Delete without yanking" })
 
-vim.keymap.set("n", "eleader>y", '"+y', { desc = "Yank to OS clipboard" })
+vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank to OS clipboard" })
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to OS clipboard" })
 
 vim.keymap.set("v", "<leader>d", '"+d', { desc = "Delete and yank to OS clipboard" })
