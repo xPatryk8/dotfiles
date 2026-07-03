@@ -10,6 +10,8 @@ return {
 		vim.g.compile_mode = {
 			input_word_completion = true,
 			baleia_setup = true,
+			use_pseudo_terminal = true,
+			focus_compilation_buffer = true,
 		}
 	end,
 
