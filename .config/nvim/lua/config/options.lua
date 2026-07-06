@@ -4,10 +4,10 @@ vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
-vim.opt.winborder = "rounded"
+vim.opt.winborder = "none"
 
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 3
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
@@ -29,8 +29,6 @@ vim.o.confirm = true
 vim.opt.clipboard = ""
 
 vim.g.snippet = "none"
-
-vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
 
 vim.opt.laststatus = 3 -- global statusline
 vim.opt.cmdheight = 0

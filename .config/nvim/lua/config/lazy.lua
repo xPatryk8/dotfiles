@@ -22,7 +22,7 @@ require("lazy").setup({
 			config = function()
 				require("nightfox").setup({
 					options = {
-						transparent = true,
+						transparent = false,
 					},
 				})
 				vim.cmd.colorscheme("carbonfox")
