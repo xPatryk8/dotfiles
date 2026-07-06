@@ -21,7 +21,7 @@ config.window_background_opacity = 0.55
 config.enable_tab_bar = false
 
 config.window_padding = {
-	left = 5,
+	left = 0,
 	right = 0,
 	top = 0,
 	bottom = 0,
