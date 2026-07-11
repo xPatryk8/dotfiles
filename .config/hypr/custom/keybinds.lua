@@ -1,10 +1,20 @@
 -- Apps
 hl.bind(MAIN_MOD .. " + Q", hl.dsp.exec_cmd(TERMINAL))
-hl.bind(MAIN_MOD .. " + E", hl.dsp.exec_cmd(NEW_WORKSPACE .. FILE_MANAGER))
 hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
+
 hl.bind(MAIN_MOD .. " + X", function()
 	hl.exec_cmd(TERMINAL .. " -e btop", { workspace = "special:btop" })
 end)
+hl.bind(MAIN_MOD .. " + S", function()
+	hl.exec_cmd(TERMINAL .. " -e", { workspace = "special:terminal" })
+end)
+hl.bind(MAIN_MOD .. " + E", function()
+	hl.exec_cmd(FILE_MANAGER, { workspace = "special:file_manager" })
+end)
+
+hl.bind(MAIN_MOD .. "+ SHIFT + X", hl.dsp.workspace.toggle_special("btop"))
+hl.bind(MAIN_MOD .. "+ SHIFT + S", hl.dsp.workspace.toggle_special("terminal"))
+hl.bind(MAIN_MOD .. "+ SHIFT + E", hl.dsp.workspace.toggle_special("file_manager"))
 hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"), { locked = true })
 hl.bind(MAIN_MOD .. " + B", hl.dsp.exec_cmd(NEW_WORKSPACE .. BROWSER_PRIV))
 
@@ -32,7 +42,6 @@ for i = 1, 10 do
 	hl.bind(MAIN_MOD .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(MAIN_MOD .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
-hl.bind(MAIN_MOD .. "+ SHIFT + X", hl.dsp.workspace.toggle_special("btop"))
 
 hl.bind(MAIN_MOD .. " + bracketleft", hl.dsp.focus({ workspace = "-1" }))
 hl.bind(MAIN_MOD .. " + bracketright", hl.dsp.focus({ workspace = "+1" }))

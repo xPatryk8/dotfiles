@@ -45,6 +45,14 @@ hl.window_rule({
 	rounding = 0,
 })
 
+hl.workspace_rule({ workspace = "s[true]", gaps_out = 60, gaps_in = 5 })
+hl.window_rule({
+	name = "special-rule",
+	match = { float = false, workspace = "s[true]" },
+	border_size = 0,
+	rounding = 10,
+})
+
 hl.config({
 	dwindle = {
 		preserve_split = true,
