@@ -2,21 +2,21 @@
 hl.bind(MAIN_MOD .. " + Q", hl.dsp.exec_cmd(TERMINAL))
 hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
 
-hl.bind(MAIN_MOD .. " + X", function()
-	hl.exec_cmd(TERMINAL .. " -e btop", { workspace = "special:btop" })
-end)
-hl.bind(MAIN_MOD .. " + S", function()
-	hl.exec_cmd(TERMINAL .. " -e", { workspace = "special:terminal" })
-end)
-hl.bind(MAIN_MOD .. " + E", function()
-	hl.exec_cmd(FILE_MANAGER, { workspace = "special:file_manager" })
-end)
+hl.bind(MAIN_MOD .. "+ S", hl.dsp.workspace.toggle_special("terminal"))
+hl.workspace_rule({ workspace = "special:terminal", on_created_empty = TERMINAL })
 
-hl.bind(MAIN_MOD .. "+ SHIFT + X", hl.dsp.workspace.toggle_special("btop"))
-hl.bind(MAIN_MOD .. "+ SHIFT + S", hl.dsp.workspace.toggle_special("terminal"))
-hl.bind(MAIN_MOD .. "+ SHIFT + E", hl.dsp.workspace.toggle_special("file_manager"))
-hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"), { locked = true })
+hl.bind(MAIN_MOD .. "+ X", hl.dsp.workspace.toggle_special("btop"))
+hl.workspace_rule({ workspace = "special:btop", on_created_empty = TERMINAL .. " -e btop" })
+
+hl.bind(MAIN_MOD .. "+ E", hl.dsp.workspace.toggle_special("file_manager"))
+hl.workspace_rule({ workspace = "special:file_manager", on_created_empty = FILE_MANAGER })
+
+hl.bind(MAIN_MOD .. "+ M", hl.dsp.workspace.toggle_special("music"))
+hl.workspace_rule({ workspace = "special:music", on_created_empty = " youtube-music" })
+
 hl.bind(MAIN_MOD .. " + B", hl.dsp.exec_cmd(NEW_WORKSPACE .. BROWSER_PRIV))
+
+hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"), { locked = true })
 
 -- General
 hl.bind(MAIN_MOD .. " + C", hl.dsp.window.close())
