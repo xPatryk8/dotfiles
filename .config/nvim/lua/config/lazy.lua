@@ -38,5 +38,7 @@ require("lazy").setup({
 		require("plugins.blink"),
 		require("plugins.compile-mode"),
 		require("plugins.markview"),
+		require("plugins.lazygit"),
+		require("plugins.multicursor"),
 	},
 })
