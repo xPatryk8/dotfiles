@@ -5,6 +5,8 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Open file explorer" })
 vim.keymap.set("n", "<leader>w", vim.cmd.w, { desc = "Save file" })
+
+vim.keymap.set("n", "<leader>j", ":term<CR>", { desc = "Open terminal mode" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 vim.keymap.set("i", "jj", "<Esc>", { desc = "Doulbe j to exit insert mode" })
