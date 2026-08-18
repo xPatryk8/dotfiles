@@ -1,11 +1,28 @@
 All config that I need.
+I use stow for managing symlinks.
 
-## Packages
+## Requirements
+- git
+- neovim
+- tmux
+- hyprland
+- wezterm
+- rofi
+- waybar
+- swaync
+- Iosevka font
 
-### Core
-hyprland waybar wezterm rofi stow swaync flameshot nvim lazygit tmux yazi
+## Usefull apps that I use
+- KDE connect
+- syncthing
+- lazygit
+- flameshot
 
-### Usefull
-kdeconnect syncthing
+## Installation
 
-Font in terminal: BitstromWeraNerdFontMono
+1. Clone the repository and install:
+
+``` bash
+    git clone <repository-url> ~/dotfiles
+    stow dotfiles 
+```
