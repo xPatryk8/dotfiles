@@ -23,6 +23,6 @@ I use stow for managing symlinks.
 1. Clone the repository and install:
 
 ``` bash
-    git clone <repository-url> ~/dotfiles
+    git clone https://github.com/xPatryk8/dotfiles ~/dotfiles
     stow dotfiles 
 ```
