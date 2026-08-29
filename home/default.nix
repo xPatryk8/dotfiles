@@ -9,11 +9,21 @@
   programs.home-manager.enable = true;
   
   home.packages = with pkgs; [
+    # general
     tree
+    unzip
+    wget
+    fd
+
+    # C/C++
     gcc
     gnumake
+    gdb
+    clang
+    gdb
     pkg-config
 
+    # font
     iosevka
   ];
 
