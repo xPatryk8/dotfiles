@@ -43,7 +43,9 @@
     recursive = true;
   };
 
-  xdg.configFile."hyprland" = {
+  wayland.windowManager.hyprland.enable = true;
+
+  xdg.configFile."hypr" = {
     source = ./hypr;
     recursive = true;
   };
