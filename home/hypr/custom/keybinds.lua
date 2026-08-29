@@ -1,32 +1,32 @@
 -- Apps
 hl.bind(MAIN_MOD .. " + Q", hl.dsp.exec_cmd(TERMINAL))
-hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
+-- hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
 
 hl.bind(MAIN_MOD .. "+ S", hl.dsp.workspace.toggle_special("terminal"))
 hl.workspace_rule({ workspace = "special:terminal", on_created_empty = TERMINAL })
 
-hl.bind(MAIN_MOD .. "+ X", hl.dsp.workspace.toggle_special("btop"))
-hl.workspace_rule({ workspace = "special:btop", on_created_empty = TERMINAL .. " -e btop" })
+-- hl.bind(MAIN_MOD .. "+ X", hl.dsp.workspace.toggle_special("btop"))
+-- hl.workspace_rule({ workspace = "special:btop", on_created_empty = TERMINAL .. " -e btop" })
 
-hl.bind(MAIN_MOD .. "+ E", hl.dsp.workspace.toggle_special("file_manager"))
-hl.workspace_rule({ workspace = "special:file_manager", on_created_empty = FILE_MANAGER })
+-- hl.bind(MAIN_MOD .. "+ E", hl.dsp.workspace.toggle_special("file_manager"))
+-- hl.workspace_rule({ workspace = "special:file_manager", on_created_empty = FILE_MANAGER })
 
-hl.bind(MAIN_MOD .. "+ M", hl.dsp.workspace.toggle_special("music"))
-hl.workspace_rule({ workspace = "special:music", on_created_empty = " youtube-music" })
+-- hl.bind(MAIN_MOD .. "+ M", hl.dsp.workspace.toggle_special("music"))
+-- hl.workspace_rule({ workspace = "special:music", on_created_empty = " youtube-music" })
 
-hl.bind(MAIN_MOD .. " + B", hl.dsp.exec_cmd(NEW_WORKSPACE .. BROWSER_PRIV))
+-- hl.bind(MAIN_MOD .. " + B", hl.dsp.exec_cmd(NEW_WORKSPACE .. BROWSER_PRIV))
 
-hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"), { locked = true })
+-- hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"), { locked = true })
 
 -- General
 hl.bind(MAIN_MOD .. " + C", hl.dsp.window.close())
 hl.bind(
-	MAIN_MOD .. " + escape",
-	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
+    MAIN_MOD .. " + escape",
+    hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(MAIN_MOD .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(MAIN_MOD .. " + T", hl.dsp.layout("togglesplit")) -- dwindle only
-hl.bind(MAIN_MOD .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(MAIN_MOD .. " + T", hl.dsp.layout("togglesplit"))                                            -- dwindle only
+-- hl.bind(MAIN_MOD .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind("Pause", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true }) -- Mute mic globally
 
 -- Move focus
@@ -38,9 +38,9 @@ hl.bind(MAIN_MOD .. " + F", hl.dsp.window.fullscreen())
 
 -- Workspaces
 for i = 1, 10 do
-	local key = i % 10 -- 10 maps to key 0
-	hl.bind(MAIN_MOD .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(MAIN_MOD .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+    local key = i % 10 -- 10 maps to key 0
+    hl.bind(MAIN_MOD .. " + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind(MAIN_MOD .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 hl.bind(MAIN_MOD .. " + bracketleft", hl.dsp.focus({ workspace = "-1" }))
@@ -62,19 +62,19 @@ hl.bind(MAIN_MOD .. " + SHIFT + J", hl.dsp.window.swap({ direction = "d" }))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(
-	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-	{ locked = true, repeating = true }
+    "XF86AudioRaiseVolume",
+    hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+    { locked = true, repeating = true }
 )
 hl.bind(
-	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-	{ locked = true, repeating = true }
+    "XF86AudioLowerVolume",
+    hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+    { locked = true, repeating = true }
 )
 hl.bind(
-	"XF86AudioMute",
-	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-	{ locked = true, repeating = true }
+    "XF86AudioMute",
+    hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+    { locked = true, repeating = true }
 )
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
