@@ -43,6 +43,11 @@
     recursive = true;
   };
 
+  xdg.configFile."hyprland" = {
+    source = ./hypr;
+    recursive = true;
+  };
+
   programs.bash = {
     enable = true;
     shellAliases = {
