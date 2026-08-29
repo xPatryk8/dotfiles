@@ -2,7 +2,7 @@
 
 MAIN_MOD = "SUPER"
 TERMINAL = "kitty"
--- FILE_MANAGER = TERMINAL .. " -e yazi"
+FILE_MANAGER = TERMINAL .. " -e yazi"
 -- MENU = "rofi -modi drun,calc -show"
 -- BROWSER_PRIV = "flatpak run app.zen_browser.zen --private-window"
 

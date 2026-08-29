@@ -8,8 +8,8 @@ hl.workspace_rule({ workspace = "special:terminal", on_created_empty = TERMINAL 
 -- hl.bind(MAIN_MOD .. "+ X", hl.dsp.workspace.toggle_special("btop"))
 -- hl.workspace_rule({ workspace = "special:btop", on_created_empty = TERMINAL .. " -e btop" })
 
--- hl.bind(MAIN_MOD .. "+ E", hl.dsp.workspace.toggle_special("file_manager"))
--- hl.workspace_rule({ workspace = "special:file_manager", on_created_empty = FILE_MANAGER })
+hl.bind(MAIN_MOD .. "+ E", hl.dsp.workspace.toggle_special("file_manager"))
+hl.workspace_rule({ workspace = "special:file_manager", on_created_empty = FILE_MANAGER })
 
 -- hl.bind(MAIN_MOD .. "+ M", hl.dsp.workspace.toggle_special("music"))
 -- hl.workspace_rule({ workspace = "special:music", on_created_empty = " youtube-music" })

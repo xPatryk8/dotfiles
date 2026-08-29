@@ -15,6 +15,9 @@
     wget
     fd
 
+    # usefull
+    yazi
+
     # C/C++
     gcc
     gnumake
@@ -32,6 +35,7 @@
   programs.firefox.enable = true;
   programs.fastfetch.enable = true;
   programs.ripgrep.enable = true;
+  programs.yazi.enable = true;
 
   programs.neovim = {
     enable = true;
@@ -68,6 +72,9 @@
   programs.kitty = {
     enable = true;
     font.name = "iosevka";
+    settings = {
+        confirm_os_window_close = 0;
+    };
   };
 
   programs.lazygit.enable = true;
