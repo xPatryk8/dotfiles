@@ -30,7 +30,6 @@ require("lazy").setup({
 		},
 		require("plugins.undotree"),
 		require("plugins.telescope"),
-		require("plugins.harpoon"),
 		require("plugins.mini"),
 		require("plugins.which-key"),
 		require("plugins.gitsigns"),

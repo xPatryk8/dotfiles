@@ -19,6 +19,7 @@
 
   programs.firefox.enable = true;
   programs.fastfetch.enable = true;
+  programs.ripgrep.enable = true;
 
   programs.neovim = {
     enable = true;
