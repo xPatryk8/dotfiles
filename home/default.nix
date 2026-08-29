@@ -19,9 +19,11 @@
     gcc
     gnumake
     gdb
-    clang
+    clang-tools
     gdb
     pkg-config
+
+    lua-language-server
 
     # font
     iosevka

@@ -28,6 +28,9 @@ require("lazy").setup({
 				vim.cmd.colorscheme("carbonfox")
 			end,
 		},
+	rocks = {
+		enabled = false,
+	},
 		require("plugins.undotree"),
 		require("plugins.telescope"),
 		require("plugins.mini"),
