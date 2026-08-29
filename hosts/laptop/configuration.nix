@@ -8,6 +8,18 @@
 
   boot.loader.systemd-boot.enable = true;
 
+  nix.optimise = {
+    automatic = true;
+    dates = [ "daily" ];
+    persistent = true;
+  }; 
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 31d";
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
 
   networking.networkmanager.enable = true;
