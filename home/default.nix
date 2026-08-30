@@ -19,6 +19,7 @@
     yazi
     thunar
     anyrun
+    hyprpaper
 
     # C/C++
     gcc
@@ -73,10 +74,22 @@
       };
   };
 
+  services.hyprpaper = {
+      enable = true;
+      settings = {
+# CONFIG: change for your machine
+          wallpaper = {
+              monitor = "Virtual-1";
+              path = "${config.home.homeDirectory}/.dotfiles/wallpapers/japan-wallpaper.jpg";
+          };
+      };
+  };
+
   programs.firefox.enable = true;
   programs.fastfetch.enable = true;
   programs.ripgrep.enable = true;
   programs.yazi.enable = true;
+
   programs.anyrun = {
     enable = true;
 

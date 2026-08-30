@@ -11,6 +11,7 @@ require("custom.appearance")
 require("custom.autostart")
 
 ---- MONITORS ----
+--- CONFIG: change for your machine
 hl.monitor({
     output = "",
     mode = "1920x1080@60",
