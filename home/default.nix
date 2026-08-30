@@ -17,6 +17,7 @@
 
     # usefull
     yazi
+    thunar
     anyrun
 
     # C/C++
