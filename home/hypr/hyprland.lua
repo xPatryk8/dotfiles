@@ -18,11 +18,6 @@ hl.monitor({
     scale = "1",
 })
 
----- ENVIRONMENT VARIABLES ----
--- hl.env("GDK_BACKEND", "wayland,x11,*")
--- hl.env("GTK_THEME", "prefer-dark")
--- hl.env("QT_QPA_PLATFORMTHEME", "kde")
-
 ---- INPUT ----
 hl.config({
     input = {
@@ -44,7 +39,6 @@ hl.gesture({
 
 ---- WINDOWS AND WORKSPACES ----
 hl.window_rule({
-    -- Ignore maximize requests from all apps
     name = "suppress-maximize-events",
     match = { class = ".*" },
 
@@ -52,7 +46,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
     name = "fix-xwayland-drags",
     match = {
         class = "^$",
