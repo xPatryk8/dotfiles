@@ -3,7 +3,7 @@
 MAIN_MOD = "SUPER"
 TERMINAL = "kitty"
 FILE_MANAGER = TERMINAL .. " -e yazi"
--- MENU = "rofi -modi drun,calc -show"
+MENU = "anyrun"
 -- BROWSER_PRIV = "flatpak run app.zen_browser.zen --private-window"
 
 require("custom.keybinds")

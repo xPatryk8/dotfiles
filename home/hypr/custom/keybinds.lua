@@ -1,6 +1,6 @@
 -- Apps
 hl.bind(MAIN_MOD .. " + Q", hl.dsp.exec_cmd(TERMINAL))
--- hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
+hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
 
 hl.bind(MAIN_MOD .. "+ S", hl.dsp.workspace.toggle_special("terminal"))
 hl.workspace_rule({ workspace = "special:terminal", on_created_empty = TERMINAL })

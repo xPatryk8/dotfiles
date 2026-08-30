@@ -17,6 +17,7 @@
 
     # usefull
     yazi
+    anyrun
 
     # C/C++
     gcc
@@ -34,6 +35,7 @@
   stylix = {
     enable = true;
 
+    # TODO: Change colors and other options
     base16Scheme = {
       base00 = "#1e1e2e";
       base01 = "#181825";
@@ -67,6 +69,52 @@
   programs.fastfetch.enable = true;
   programs.ripgrep.enable = true;
   programs.yazi.enable = true;
+  programs.anyrun = {
+    enable = true;
+
+    config = {
+      x.fraction = 0.5;
+      y.fraction = 0.5;
+      width.fraction = 0.3;
+
+      closeOnClick = true;
+      maxEntries = 8;
+      hidePluginInfo = true;
+
+      plugins = [
+        "${pkgs.anyrun}/lib/libapplications.so"
+        "${pkgs.anyrun}/lib/librink.so"
+        "${pkgs.anyrun}/lib/libshell.so"
+      ];
+    };
+
+    extraCss = ''
+      window {
+        background: transparent;
+      }
+
+      .main {
+        background: alpha(@theme_base_color, 0.95);
+        border-radius: 16px;
+        padding: 12px;
+      }
+
+      entry {
+        padding: 12px;
+        font-size: 16px;
+      }
+
+      .match {
+        padding: 8px;
+        border-radius: 10px;
+      }
+
+      .match:selected {
+        background: @theme_selected_bg_color;
+      }
+    '';
+
+  };
 
   programs.neovim = {
     enable = true;
