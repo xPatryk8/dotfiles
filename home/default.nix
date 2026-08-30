@@ -66,6 +66,13 @@
     opacity.terminal = 0.7;
   };
 
+  xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+          "inode/directory" = "thunar.desktop";
+      };
+  };
+
   programs.firefox.enable = true;
   programs.fastfetch.enable = true;
   programs.ripgrep.enable = true;
