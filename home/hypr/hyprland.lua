@@ -7,7 +7,7 @@ FILE_MANAGER = TERMINAL .. " -e yazi"
 -- BROWSER_PRIV = "flatpak run app.zen_browser.zen --private-window"
 
 require("custom.keybinds")
-require("custom.apperance")
+require("custom.appearance")
 require("custom.autostart")
 
 ---- MONITORS ----

@@ -14,24 +14,20 @@ hl.config({
 
     decoration = {
         rounding = 15,
-        rounding_power = 3,
 
         active_opacity = 1.0,
         inactive_opacity = 1.0,
-
-        shadow = {
-            enabled = false,
-        },
 
         blur = {
             enabled = true,
             size = 3,
             passes = 1,
-            vibrancy = 0.9,
+            vibrancy = 0.5,
         },
     },
-    animations = {
-        enabled = true,
+
+    dwindle = {
+        preserve_split = true,
     },
 })
 
@@ -53,14 +49,8 @@ hl.window_rule({
     rounding = 10,
 })
 
-hl.config({
-    dwindle = {
-        preserve_split = true,
-    },
-})
-
 hl.curve("overshoot", { type = "bezier", points = { { 0.5, 0.9 }, { 0.1, 1.1 } } })
 hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
 
-hl.animation({ leaf = "windows", enabled = true, speed = 1.00, bezier = "overshoot", style = "popin " })
+hl.animation({ leaf = "windows", enabled = true, speed = 1.00, bezier = "overshoot", style = "popin" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 1.00, bezier = "almostLinear", style = "slide" })
