@@ -43,6 +43,8 @@ hl.window_rule({
     rounding = 10,
 })
 
+hl.layer_rule({ match = { namespace = "anyrun" }, blur = true, ignore_alpha = 0.5, blur_popups = true })
+
 hl.curve("overshoot", { type = "bezier", points = { { 0.5, 0.9 }, { 0.1, 1.1 } } })
 hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
 

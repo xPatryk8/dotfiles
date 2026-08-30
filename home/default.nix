@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 
 {
   home.username = "patryk";
@@ -37,23 +37,23 @@
 
     # TODO: Change colors and other options
     base16Scheme = {
-      base00 = "#1e1e2e";
-      base01 = "#181825";
-      base02 = "#313244";
-      base03 = "#45475a";
-      base04 = "#585b70";
-      base05 = "#cdd6f4";
-      base06 = "#f5e0e0";
-      base07 = "#b4befe";
-      base08 = "#f38ba8";
-      base09 = "#fab387";
-      base0A = "#f9e2af";
-      base0B = "#a6e3a1";
-      base0C = "#94e2d5";
-      base0D = "#89b4fa";
-      base0E = "#cba6f7";
-      base0F = "#f2cdcd";
-    };
+      base00 = "#101114";
+      base01 = "#16181D";
+      base02 = "#20232B";
+      base03 = "#30343E";
+      base04 = "#454B57";
+      base05 = "#D6DAE2";
+      base06 = "#E2E5EB";
+      base07 = "#F0F2F5";
+      base08 = "#C94F68"; 
+      base09 = "#C4875F"; 
+      base0A = "#D1B05F"; 
+      base0B = "#76A85F"; 
+      base0C = "#5CB7AA"; 
+      base0D = "#6289C4"; 
+      base0E = "#9B70C2"; 
+      base0F = "#B88Be0"; 
+  };
 
     fonts = {
       monospace = {
@@ -74,7 +74,7 @@
 
     config = {
       x.fraction = 0.5;
-      y.fraction = 0.5;
+      y.fraction = 0.3;
       width.fraction = 0.3;
 
       closeOnClick = true;
@@ -89,31 +89,60 @@
     };
 
     extraCss = ''
+      @define-color accent     #${config.lib.stylix.colors.base0D};
+      @define-color bg-color   #${config.lib.stylix.colors.base00};
+      @define-color fg-color   #${config.lib.stylix.colors.base06};
+      @define-color desc-color #${config.lib.stylix.colors.base05};
+
+      * {
+          font-family: Iosevka;
+          font-size: 22px
+      }
+
       window {
         background: transparent;
       }
 
-      .main {
-        background: alpha(@theme_base_color, 0.95);
-        border-radius: 16px;
-        padding: 12px;
+      box.main {
+        margin: 10px;
+        border-radius: 10px;
+        border: 2px solid alpha(@accent, 0.7);
+        background-color: alpha(@bg-color, 0.7);
       }
 
-      entry {
-        padding: 12px;
-        font-size: 16px;
+      text {
+        min-height: 30px;
+        padding: 5px;
+        border-radius: 5px;
+        color: @fg-color;
       }
 
-      .match {
-        padding: 8px;
+      .matches {
+        background-color: rgba(0, 0, 0, 0);
         border-radius: 10px;
       }
 
+      list {
+        background: transparent;
+      }
+
+      label.match {
+        color: @fg-color;
+      }
+
+      label.match.description {
+        font-size: 15px;
+        color: @desc-color;
+      }
+
+      .match {
+        background: transparent;
+      }
+
       .match:selected {
-        background: @theme_selected_bg_color;
+        background: alpha(@accent, 0.7);
       }
     '';
-
   };
 
   programs.neovim = {
@@ -136,7 +165,7 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles#laptop";
+      rebuild = "sudo nixos-rebuild switch --flake ~/.dotsfiles#laptop";
       ll = "ls -lah";
     };
   };
