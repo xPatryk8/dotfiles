@@ -6,8 +6,8 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.winborder = "none"
 
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
