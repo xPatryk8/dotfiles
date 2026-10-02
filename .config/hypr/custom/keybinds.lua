@@ -1,6 +1,10 @@
 -- Apps
 hl.bind(MAIN_MOD .. " + Q", hl.dsp.exec_cmd(TERMINAL))
-hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
+-- hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
+hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+hl.bind("HOME", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
+hl.bind(MAIN_MOD .. " + semicolon", hl.dsp.exec_cmd("noctalia msg session lock"))
+hl.bind(MAIN_MOD .. " + period", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
 
 hl.bind(MAIN_MOD .. "+ S", hl.dsp.workspace.toggle_special("terminal"))
 hl.workspace_rule({ workspace = "special:terminal", on_created_empty = TERMINAL })
@@ -17,6 +21,8 @@ hl.workspace_rule({ workspace = "special:music", on_created_empty = " youtube-mu
 hl.bind(MAIN_MOD .. " + B", hl.dsp.exec_cmd(NEW_WORKSPACE .. BROWSER_PRIV))
 
 hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"), { locked = true })
+
+hl.bind(MAIN_MOD .. " + P", hl.dsp.window.pin())
 
 -- General
 hl.bind(MAIN_MOD .. " + C", hl.dsp.window.close())
