@@ -62,6 +62,19 @@
         package = pkgs.iosevka;
         name = "Iosevka";
       };
+
+      sansSerif = {
+        package = pkgs.iosevka;
+        name = "Iosevka";
+      };
+
+    };
+
+    cursor = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+        size = 24;
+
     };
 
     opacity.terminal = 0.7;
@@ -186,7 +199,7 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/.dotsfiles#laptop";
+      rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles#laptop";
       ll = "ls -lah";
     };
   };
