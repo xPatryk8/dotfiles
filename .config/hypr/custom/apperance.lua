@@ -32,6 +32,7 @@ hl.config({
 	},
 	cursor = {
 		hide_on_key_press = true,
+		inactive_timeout = 30,
 	},
 })
 
@@ -51,6 +52,12 @@ hl.window_rule({
 	match = { float = false, workspace = "s[true]" },
 	border_size = 0,
 	rounding = 10,
+})
+
+hl.window_rule({
+	name = "pinned_border",
+	match = { pin = true },
+	border_color = "#FF0000",
 })
 
 hl.config({
