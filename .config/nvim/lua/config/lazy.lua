@@ -18,26 +18,25 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{
-			"EdenEast/nightfox.nvim",
+			"sainnhe/gruvbox-material",
+			priority = 1000,
 			config = function()
-				require("nightfox").setup({
-					options = {
-						transparent = false,
-					},
-				})
-				vim.cmd.colorscheme("carbonfox")
+				vim.g.gruvbox_material_background = "hard"
+				vim.g.gruvbox_material_enable_italic = true
+				vim.g.gruvbox_material_enable_bold = true
+				vim.g.gruvbox_material_ui_contrast = "high"
+
+				vim.cmd.colorscheme("gruvbox-material")
 			end,
 		},
 		require("plugins.undotree"),
 		require("plugins.telescope"),
-		require("plugins.harpoon"),
 		require("plugins.mini"),
 		require("plugins.which-key"),
 		require("plugins.gitsigns"),
 		require("plugins.lspconfig"),
 		require("plugins.blink"),
 		require("plugins.compile-mode"),
-		require("plugins.markview"),
 		require("plugins.lazygit"),
 		require("plugins.multicursor"),
 	},
