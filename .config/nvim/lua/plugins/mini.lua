@@ -5,6 +5,7 @@ return {
 
 		config = function()
 			require("mini.ai").setup()
+      require("mini.align").setup()
 			require("mini.statusline").setup({ use_icons = true })
 			require("mini.surround").setup()
 		end,
