@@ -27,7 +27,7 @@ hl.bind(MAIN_MOD .. " + P", hl.dsp.window.pin())
 -- General
 hl.bind(MAIN_MOD .. " + C", hl.dsp.window.close())
 hl.bind(
-	MAIN_MOD .. " + escape",
+	MAIN_MOD .. " + F12",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(MAIN_MOD .. " + V", hl.dsp.window.float({ action = "toggle" }))
