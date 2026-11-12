@@ -9,7 +9,7 @@ hl.config({
 			inactive_border = "#000000",
 		},
 
-		layout = "dwindle",
+		layout = "scrolling",
 	},
 
 	decoration = {
@@ -32,7 +32,7 @@ hl.config({
 	},
 	cursor = {
 		hide_on_key_press = true,
-		inactive_timeout = 30,
+		inactive_timeout = 20,
 	},
 })
 
