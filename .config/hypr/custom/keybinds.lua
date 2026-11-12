@@ -1,28 +1,44 @@
 -- Apps
 hl.bind(MAIN_MOD .. " + Q", hl.dsp.exec_cmd(TERMINAL))
--- hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd(MENU))
 hl.bind(MAIN_MOD .. " + space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind("HOME", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind(MAIN_MOD .. " + apostrophe", hl.dsp.exec_cmd("noctalia msg session lock"))
 hl.bind(MAIN_MOD .. " + period", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
 
 hl.bind(MAIN_MOD .. "+ S", hl.dsp.workspace.toggle_special("terminal"))
-hl.workspace_rule({ workspace = "special:terminal", on_created_empty = TERMINAL })
-
 hl.bind(MAIN_MOD .. "+ X", hl.dsp.workspace.toggle_special("btop"))
-hl.workspace_rule({ workspace = "special:btop", on_created_empty = TERMINAL .. " -e btop" })
-
 hl.bind(MAIN_MOD .. "+ E", hl.dsp.workspace.toggle_special("file_manager"))
-hl.workspace_rule({ workspace = "special:file_manager", on_created_empty = FILE_MANAGER })
-
 hl.bind(MAIN_MOD .. "+ M", hl.dsp.workspace.toggle_special("music"))
-hl.workspace_rule({ workspace = "special:music", on_created_empty = " youtube-music" })
 
 hl.bind(MAIN_MOD .. " + B", hl.dsp.exec_cmd(NEW_WORKSPACE .. BROWSER_PRIV))
 
 hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"), { locked = true })
 
 hl.bind(MAIN_MOD .. " + P", hl.dsp.window.pin())
+
+-- Workspaces auto run
+local workspaces_on_empty = {
+  ["special:terminal"] = {TERMINAL},
+  ["special:btop"] = {TERMINAL .. " -e btop"},
+  ["special:file_manager"] = {FILE_MANAGER},
+  ["special:music"] = {"youtube-music"}
+}
+
+hl.on("workspace.created", function(ws)
+  if not ws.is_empty then return end
+
+  local program = ws.id and workspaces_on_empty[tostring(ws.id)] or workspaces_on_empty[ws.name]
+  if program == nil then return end
+
+  local cmd, provided_rules = table.unpack(program)
+  local rules = {}
+  if provided_rules ~= nil then
+    for k, v in provided_rules do rules[k] = v end
+  end
+
+  rules.workspace = (ws.id and tostring(ws.id) or ws.name) .. " silent"
+  hl.exec_cmd(cmd, rules)
+end)
 
 -- General
 hl.bind(MAIN_MOD .. " + C", hl.dsp.window.close())
