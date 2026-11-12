@@ -18,6 +18,7 @@ return {
 				kind = "render",
 				baleia_options = {},
 			},
+      default_command = "",
 		}
 		vim.keymap.set("n", "<leader>c", ":Compile<CR>", { desc = "Compile mode" })
 	end,
